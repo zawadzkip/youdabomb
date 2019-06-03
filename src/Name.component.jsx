@@ -1,9 +1,12 @@
 import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
 
-function Name() {
+function Name({ nameToUse }) {
   const queryParams = new URLSearchParams(window.location.search);
-  const name = queryParams.get('name');
+  let name = queryParams.get('name');
+  if (nameToUse) {
+    name = nameToUse;
+  }
   return (
     <Grid container direction='column' justify='center' alignContent='center'>
       <Grid item>
