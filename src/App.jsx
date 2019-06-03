@@ -25,11 +25,6 @@ function App() {
       <Grid item>
         <img alt="bomb gif" src={BombGif} />
       </Grid>
-      <Grid item>
-        <Typography variant="h5" className={classes.textAlign}>
-          Thanks for being you.
-        </Typography>
-      </Grid>
     </Grid>
   );
 }
