@@ -8,7 +8,7 @@ function Name({ nameToUse }) {
     name = nameToUse;
   }
   return (
-    <Grid container direction='column' justify='center' alignContent='center'>
+    <Grid container direction='column' justify='center' alignContent='stretch'>
       <Grid item>
         <Typography variant="h1">
           {name ? `Hi ${name}!` : "Hi!"}

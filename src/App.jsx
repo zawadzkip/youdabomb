@@ -15,11 +15,31 @@ const useStyles = makeStyles({
   }
 });
 
+const getRandomColor = () => {
+  const colorArray = ["#B22222", "#DD0000", "#EF5927",
+    "#f2e800", "#ff05db", "##CE05F4", "#10fd08", "#fff403",
+    "#40e0d0"]
+  const number = Math.floor(Math.random() * colorArray.length);
+  return colorArray[number];
+};
+
 function App() {
   const classes = useStyles();
-  const [ isEditing, setIsEditing ] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [colorToUse, setColorToUse] = useState(getRandomColor());
+
+  setTimeout(() => {
+    let myNewColor = colorToUse;
+    while (colorToUse === myNewColor) {
+      myNewColor = getRandomColor();
+    }
+    setColorToUse(myNewColor);
+  }, 1000);
   return (
-    <Grid className={classes.root} container direction='column' justify='center' alignContent='center'>
+    <Grid className={classes.root}
+      container direction='column'
+      justify='center' alignContent='center'
+      style={{ backgroundColor: `${colorToUse}` }}>
       <Grid item >
         <Name />
       </Grid>
