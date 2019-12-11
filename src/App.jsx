@@ -29,11 +29,7 @@ function App() {
   const [colorToUse, setColorToUse] = useState(getRandomColor());
 
   setTimeout(() => {
-    let myNewColor = colorToUse;
-    while (colorToUse === myNewColor) {
-      myNewColor = getRandomColor();
-    }
-    setColorToUse(myNewColor);
+    setColorToUse(getRandomColor());
   }, 1000);
   return (
     <Grid className={classes.root}
